@@ -618,7 +618,13 @@ int main (void)
             LeMatricula("CEP final", outroCEP, TAM_CEP + 1);
 
             intervalo = BuscaIntervaloLSE(lista, umCEP, outroCEP);
+            if(intervalo){
             ExibeLista(intervalo);
+            DestroiListaSE(&intervalo);
+            }else{
+               printf("\n>>> Erro no intervalo de ceps\n");
+
+            }
             /*
             TODO: continuar com a chamada a funcao e exibicao da lista resultante.
             Se nenhum elemento for encontrado, mostrar uma mensagem.
